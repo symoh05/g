@@ -17,10 +17,11 @@
       background-color: #0d1117;
       color: #c9d1d9;
       font-family: Arial, sans-serif;
+    }
 
     /* Header */
     header {
-      background-color: #161b22; /* Dark background like GitHub */
+      background-color: #161b22;
       color: #fff;
       padding: 10px 20px;
       display: flex;
@@ -29,7 +30,7 @@
     }
 
     header h1 {
-      color: #4ea8de; /* Blue text */
+      color: #4ea8de;
     }
 
     nav ul {
@@ -43,13 +44,13 @@
 
     nav ul li a {
       text-decoration: none;
-      color: #c9d1d9; /* Light gray text */
+      color: #c9d1d9;
       font-weight: bold;
     }
 
     /* Banner */
     .banner {
-      background-color: #238636; /* Green */
+      background-color: #238636;
       color: #fff;
       text-align: center;
       padding: 50px 20px;
@@ -64,7 +65,7 @@
     .products {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
       padding: 20px;
       gap: 20px;
     }
@@ -73,7 +74,7 @@
       background-color: #161b22;
       border: 1px solid #30363d;
       border-radius: 6px;
-      width: 200px;
+      width: calc(33.333% - 20px);
       padding: 10px;
       text-align: center;
       color: #c9d1d9;
@@ -87,7 +88,7 @@
 
     .product-card h3 {
       margin: 10px 0;
-      color: #4ea8de; /* Blue heading */
+      color: #4ea8de;
     }
 
     .product-card p {
@@ -135,73 +136,127 @@
 
   <!-- Products -->
   <section class="products">
+    <!-- Original 10 Products -->
     <div class="product-card">
       <img src="https://via.placeholder.com/200" alt="Product 1">
       <h3>Leather Wallet</h3>
       <p>$29.99</p>
       <button>Add to Cart</button>
     </div>
-
     <div class="product-card">
       <img src="https://via.placeholder.com/200" alt="Product 2">
       <h3>Elegant Watch</h3>
       <p>$89.99</p>
       <button>Add to Cart</button>
     </div>
-
     <div class="product-card">
       <img src="https://via.placeholder.com/200" alt="Product 3">
       <h3>Sunglasses</h3>
       <p>$49.99</p>
       <button>Add to Cart</button>
     </div>
-
     <div class="product-card">
       <img src="https://via.placeholder.com/200" alt="Product 4">
       <h3>Silk Scarf</h3>
       <p>$19.99</p>
       <button>Add to Cart</button>
     </div>
-
     <div class="product-card">
       <img src="https://via.placeholder.com/200" alt="Product 5">
       <h3>Beaded Necklace</h3>
       <p>$39.99</p>
       <button>Add to Cart</button>
     </div>
-
     <div class="product-card">
       <img src="https://via.placeholder.com/200" alt="Product 6">
       <h3>Stylish Cap</h3>
       <p>$14.99</p>
       <button>Add to Cart</button>
     </div>
-
     <div class="product-card">
       <img src="https://via.placeholder.com/200" alt="Product 7">
       <h3>Bracelet</h3>
       <p>$24.99</p>
       <button>Add to Cart</button>
     </div>
-
     <div class="product-card">
       <img src="https://via.placeholder.com/200" alt="Product 8">
       <h3>Ring Set</h3>
       <p>$34.99</p>
       <button>Add to Cart</button>
     </div>
-
     <div class="product-card">
       <img src="https://via.placeholder.com/200" alt="Product 9">
       <h3>Keychain</h3>
       <p>$9.99</p>
       <button>Add to Cart</button>
     </div>
-
     <div class="product-card">
       <img src="https://via.placeholder.com/200" alt="Product 10">
       <h3>Ear Studs</h3>
       <p>$12.99</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <!-- Additional 10 Products -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 11">
+      <h3>Phone Case</h3>
+      <p>$19.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 12">
+      <h3>Leather Belt</h3>
+      <p>$29.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 13">
+      <h3>Gold Chain</h3>
+      <p>$79.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 14">
+      <h3>Hat</h3>
+      <p>$14.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 15">
+      <h3>Tie Clip</h3>
+      <p>$11.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 16">
+      <h3>Brooch</h3>
+      <p>$8.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 17">
+      <h3>Travel Bag</h3>
+      <p>$59.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 18">
+      <h3>Backpack</h3>
+      <p>$49.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 19">
+      <h3>Cufflinks</h3>
+      <p>$17.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Product 20">
+      <h3>Gloves</h3>
+      <p>$24.99</p>
       <button>Add to Cart</button>
     </div>
   </section>
