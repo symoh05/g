@@ -12,6 +12,11 @@
       box-sizing: border-box;
       font-family: Arial, sans-serif;
     }
+     header h1 {
+      color: #4ea8de;
+      font-size: 50px;
+      font-family: 'Times New Roman', Times, serif;
+    }
 
     body {
       background-color: #0d1117;
@@ -19,35 +24,106 @@
       font-family: Arial, sans-serif;
     }
 
-    /* Header */
-    header {
-      background-color: #161b22;
-      color: #fff;
-      padding: 10px 20px;
+  /* Off-Screen Menu Styles */
+  .off-screen-menu {
+      background-color:#0d1117;
+      color: rgb(248, 245, 245);
+      height: 100vh;
+      width: 250px; /* Menu width */
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      right: -250px;  /* Initially off-screen */
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-    }
-
-    header h1 {
-      color: #4ea8de;
-    }
-
-    nav ul {
-      display: flex;
+      text-align: center;
+      font-size: 1.5rem;
+      transition: right 0.3s ease; /* Smooth slide-in effect */
+      
+  }
+  
+  /* When the menu is active (slid in) */
+  .off-screen-menu.active {
+      right: 0;  /* Slide the menu into view */
+  }
+  
+  .off-screen-menu ul {
       list-style: none;
-    }
-
-    nav ul li {
-      margin-left: 20px;
-    }
-
-    nav ul li a {
+      padding: 0;
+  }
+  
+  .off-screen-menu li {
+      margin: 20px 0;
+      display: block;
+      padding: 10px 15px;
+      border-bottom: 1px solid #ccc;
+  }
+  
+  .off-screen-menu a {
+      color: white;
       text-decoration: none;
-      color: #c9d1d9;
-      font-weight: bold;
-    }
-
+      font-size: 1.5rem;
+  }
+  
+  /* Hamburger Menu Styles */
+  .ham-menu {
+      height: 50px;
+      width: 50px;
+      margin-left: auto;
+      position: relative;
+      cursor: pointer;
+      z-index: 1000;  /* Ensures it stays on top */
+  }
+  
+  .ham-menu span {
+      height: 5px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 25px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    
+  }
+  
+  .ham-menu span:nth-child(1) {
+      top: 25%;
+  }
+  
+  .ham-menu span:nth-child(2) {
+      top: 50%;
+  }
+  
+  .ham-menu span:nth-child(3) {
+      top: 75%;
+  }
+  
+  /* When the hamburger menu is active */
+  .ham-menu.active span:nth-child(1) {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);/* Rotate the top bar */
+  }
+  
+  .ham-menu.active span:nth-child(2) {
+      opacity: 0;  /* Hide the middle bar */
+  }
+  
+  .ham-menu.active span:nth-child(3) {
+      top: 50%;
+      transform: translate(-50%, 50%) rotate(-45deg);  /* Rotate the bottom bar */
+  }
+  
+  /* Make sure the header/nav is positioned correctly */
+  nav {
+      padding: 1rem;
+      background-color: black;
+      position: relative;
+  }
+  
     /* Banner */
     .banner {
       background-color: #238636;
@@ -115,18 +191,29 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>Accessory Haven</h1>
+<header>
     <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+      <h1>Accessory Haven</h1>
+        <!-- Hamburger Menu -->
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Off-Screen Menu (Initially hidden) -->
+        <div class="off-screen-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="services.html">Services</a></li>
+        
+                <li><a href="groups.html">Groups</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
+</header>
 
   <!-- Banner -->
   <section class="banner">
@@ -170,5 +257,25 @@
   <footer>
     <p>&copy; 2024 Accessory Haven. All Rights Reserved.</p>
   </footer>
+  <script>
+        // Select the hamburger menu and off-screen menu
+    const hamMenu = document.querySelector('.ham-menu');
+    const offScreenMenu = document.querySelector('.off-screen-menu');
+
+    // Toggle the menu when clicking on the hamburger menu
+    hamMenu.addEventListener('click', (event) => {
+        event.stopPropagation(); // Prevent the event from bubbling up
+        hamMenu.classList.toggle('active');
+        offScreenMenu.classList.toggle('active');
+    });
+
+    // Close the menu if you click outside the menu
+    document.addEventListener('click', (event) => {
+        if (!hamMenu.contains(event.target) && !offScreenMenu.contains(event.target)) {
+            hamMenu.classList.remove('active');
+            offScreenMenu.classList.remove('active');
+        }
+    });
+  </script>
 </body>
 </html>
